@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE resources [<!ENTITY app_name "cinePhind">]>
+<resources>
+    <string name="app_name_dir">&app_name;</string>
+    <string name="default_directory_name_debug">&app_name; debug</string>
+    <string name="default_directory_name_logs">cinePhindlogs</string>
+
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+
+    <string name="network_issue_title">Network Connection</string>
+    <string name="network_error_and_flight_mode">There was a problem connecting to the internet. Please check your connection, turn off flight mode or use Wi-Fi to access data. </string>
+
+    <string name="title_movies">Movies</string>
+    <string name="title_series">Series</string>
+    <string name="title_favourites">Favourites</string>
+
+    <string name="shake_title">Looks like things are getting shaky</string>
+    <string name="shake_description">Do you want to search using random word? Results will be random</string>
+    <string name="search">Search...</string>
+    <string name="release">Release</string>
+    <string name="runtime">Runtime</string>
+    <string name="genre">Genre</string>
+    <string name="imdb_rating">IMDb Rating</string>
+    <string name="imdb_votes">IMDb votes</string>
+    <string name="language">Language</string>
+    <string name="director">Director</string>
+    <string name="no_movies_found">No movies found</string>
+    <string name="click_here_to_search">Click here to search</string>
+    <string name="select_movies">Select movies</string>
+    <string name="select_series">Select series</string>
+    <string name="no_series_found">No series found</string>
+
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="emptyViewVisible"
+            type="boolean" />
+
+        <variable
+            name="viewModel"
+            type="com.kobus.pitzer.cinephind.repository.viewmodels.SeriesViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_dark"
+        tools:context=".fragments.SeriesViewFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_series"
+            backgroundColour="@{viewModel.currentItemType}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginRight="4dp"
+            android:paddingBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_network_state"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/network_error"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="@{emptyViewVisible? View.VISIBLE : View.GONE}">
+
+            <RelativeLayout
+                android:id="@+id/rly_empty_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_empty_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="@string/no_series_found"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_light"/>
+
+                <ImageView
+                    android:id="@+id/iv_empty_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/tv_empty_title"
+                    android:src="@drawable/series_placeholder" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
