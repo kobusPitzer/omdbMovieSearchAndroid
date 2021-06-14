@@ -23,16 +23,8 @@ import com.kobus.pitzer.cinephind.repository.models.SeriesDetailModel
 @TypeConverters(
     JsonArrayConverter::class,
     DateTypeConverter::class,
-    CloudsConverter::class,
-    CoordConverter::class,
-    CurrentConverter::class,
-    DailyConverter::class,
-    MainConverter::class,
-    SysConverter::class,
     SearchConverter::class,
-    RatingsConverter::class,
-    WeatherXConverter::class,
-    WindConverter::class
+    RatingsConverter::class
 
 )
 
