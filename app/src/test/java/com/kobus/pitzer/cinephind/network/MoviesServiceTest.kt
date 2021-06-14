@@ -51,7 +51,6 @@ class MoviesServiceTest {
     @Test
     fun getMovies() {
         val searchString = "movies"
-        val long = "28.25"
         enqueueResponse("movies.json")
         val movieData =
             LiveDataTestUtil.getValue(
@@ -64,7 +63,7 @@ class MoviesServiceTest {
 
         assertThat(
             request.path,
-            `is`("/?type=movie&apikey=fa9492e3&s=movies")
+            `is`("/?type=movie&apikey=pewpewpew&s=movies")
         )
 
         assertThat<CollectionSearch>(movieData, notNullValue())
