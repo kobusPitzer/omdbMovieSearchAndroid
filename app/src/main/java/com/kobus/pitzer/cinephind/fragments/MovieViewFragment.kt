@@ -113,10 +113,8 @@ class MovieViewFragment : Fragment() {
         binding.tutorialOnClickHandler = View.OnClickListener {
             tutorialClick++
             if (tutorialClick > 1) {
-                binding.tutorialScreenVisible = false
-                CorePreferences.setHasSeenTutorialScreen(true)
-
                 openSearchWithString("")
+                hideTutorialScreen()
             }
         }
         setRecyclerViewObserver()
@@ -134,6 +132,11 @@ class MovieViewFragment : Fragment() {
         })
         sd?.start(sensorManager)
         sd?.setSensitivity(SENSITIVITY_LIGHT)
+    }
+
+    private fun hideTutorialScreen() {
+        binding.tutorialScreenVisible = false
+        CorePreferences.setHasSeenTutorialScreen(true)
     }
 
     private fun askToRefresh() {
@@ -248,6 +251,11 @@ class MovieViewFragment : Fragment() {
         })
 
         super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        hideTutorialScreen()
+        return super.onOptionsItemSelected(item)
     }
 
     private fun hideSoftKeyBoard() {

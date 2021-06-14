@@ -6,7 +6,7 @@ This is a straightforward implementation of a series/movie search app for the Ci
 
 Clone the repository and gradle sync needed dependencies if needed. Run it through Android Studio and it will work. Needs internet connection.
 
-## Appplication information
+## Application information
 
 Some screenshots below on how the application looks
 
